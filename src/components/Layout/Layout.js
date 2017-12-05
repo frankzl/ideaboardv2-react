@@ -7,7 +7,9 @@ const Layout = (props) =>
     return (
         <AuxWrapper>
             <Header/>
-            <main>Main</main>
+            <main>
+                {props.children}
+            </main>
         </AuxWrapper>
     )
 }

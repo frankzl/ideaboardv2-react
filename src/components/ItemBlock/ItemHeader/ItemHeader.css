@@ -1,0 +1,16 @@
+.itemWrapper{
+    box-shadow: 1px 1px 1px lightgray;
+    display: flex;
+}
+
+.textWrapper{
+    flex: 4;
+    padding: 25px;
+    display: flex;
+}
+
+.actionsWrapper{
+    /*flex:auto*/
+    display: flex;
+    flex: 1
+}

@@ -1,0 +1,18 @@
+
+.actionContainer{
+    align-items:center;
+    height: 100%;
+    display: flex;
+    border-left: 1px solid lightgray;
+    padding: 0 25px 0 25px;
+    flex: auto;
+    justify-content: center;
+}
+
+.actionContainer:hover{
+    background: lightgray;
+}
+
+.actionChildContainer{
+    margin-right: 10px;
+}
