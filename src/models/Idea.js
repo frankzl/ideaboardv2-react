@@ -1,3 +1,5 @@
+import Comments from "./IdeaBody/Comments";
+
 class Idea {
     constructor( title, author, description, date ) {
         this.title = title;

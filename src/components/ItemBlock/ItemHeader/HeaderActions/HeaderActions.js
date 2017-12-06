@@ -16,11 +16,11 @@ const HeaderActions = (props) => {
 
     return <AuxWrapper>
         <div className={classes.actionContainer}>
-            <span className={classes.actionChildContainer}><i class="material-icons">{reqIcon}</i></span>
+            <span className={classes.actionChildContainer}><i className="material-icons">{reqIcon}</i></span>
             <span>{props.optValue}</span>
         </div>
         <div className={classes.actionContainer}>
-            <span className={classes.actionChildContainer}><i class="material-icons">thumb_up</i></span>
+            <span className={classes.actionChildContainer}><i className="material-icons">thumb_up</i></span>
             <span>{props.upvotes}</span>
         </div>
     </AuxWrapper>
