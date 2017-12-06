@@ -1,23 +1,36 @@
 import classes from './HeaderText.css'
-import React from 'react'
+import React, { Component } from 'react'
 import AuxWrapper from "../../../../hoc/AuxWrap";
+import { connect } from 'react-redux'
 
-const dateToString = (date) => {
+import * as actionTypes from '../../../../store/actions'
+
+const dateToString = ( date ) => {
     const splitDate = date.toDateString().split( ' ' )
-    const day = splitDate[1] + ' ' + splitDate[2]
-    const time = date.toTimeString().split(':')
-    return day + ' - ' + time[0] + ':' + time[1]
+    const day = splitDate[ 1 ] + ' ' + splitDate[ 2 ]
+    const time = date.toTimeString().split( ':' )
+    return day + ' - ' + time[ 0 ] + ':' + time[ 1 ]
 }
 
-const HeaderText = ( props ) => {
-    return <AuxWrapper>
-        <span className={classes.textContainer}>
-            <p className={classes.title}>{props.title}</p>
-            <p className={classes.description}>{props.description}</p>
+class HeaderText extends Component {
+    render() {
+        return <AuxWrapper>
+        <span className = { classes.textContainer }>
+            <p className = { classes.title }>{ this.props.title }</p>
+            <p className = { classes.description }>{ this.props.description }</p>
         </span>
-        <span className={classes.dateContainer}>
-            <p>{dateToString(props.date)}</p>
+            <span className = { classes.dateContainer }>
+            <p>{ dateToString( this.props.date ) }</p>
         </span>
-    </AuxWrapper>
+        </AuxWrapper>
+    }
 }
-export default HeaderText
+
+
+const mapDispatchToProps = ( dispatch ) => {
+    return {
+        onCommentsClicked : () => dispatch( { type : actionTypes.VIS_INIT } )
+    }
+}
+
+export default connect( null, mapDispatchToProps )( HeaderText )

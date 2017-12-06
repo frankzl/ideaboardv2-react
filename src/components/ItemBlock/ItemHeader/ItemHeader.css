@@ -7,6 +7,7 @@
     flex: auto;
     padding: 25px;
     display: flex;
+    cursor: pointer;
 }
 
 .actionsWrapper{

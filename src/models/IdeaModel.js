@@ -1,4 +1,4 @@
-import Comments from "./IdeaBody/Comments";
+import Comments from "./IdeaBody/CommentsModel";
 
 class Idea {
     constructor( title, author, description, date ) {
