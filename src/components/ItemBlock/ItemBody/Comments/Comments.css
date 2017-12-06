@@ -1,0 +1,15 @@
+
+.hr{
+    background-color: #ccc;
+    color: #ccc;
+    border: 0;
+    height: 1px;
+    width: 100%
+}
+.fullwidth{
+    width: 100%
+}
+
+.commentsWrapper{
+    background: #f5f5f5;
+}
