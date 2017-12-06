@@ -1,6 +1,6 @@
 export class Option {
-    constructor( optionText, votes ) {
-        this.optionText = optionText
+    constructor( name, votes ) {
+        this.name = name
         this.votes = votes
     }
 }

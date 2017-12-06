@@ -1,6 +1,8 @@
 import React from 'react'
 import AuxWrapper from "../../../../hoc/AuxWrap";
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 import classes from './HeaderActions.css'
 
 const HeaderActions = ( props ) => {
@@ -34,6 +36,7 @@ const HeaderActions = ( props ) => {
             <span className = { classes.actionChildContainer }><i className = "material-icons">thumb_up</i></span>
             <span>{ props.upvotes }</span>
         </div>
+
     </AuxWrapper>
 }
 

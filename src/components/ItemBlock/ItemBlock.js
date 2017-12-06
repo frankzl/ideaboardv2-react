@@ -7,6 +7,8 @@ import ItemBody from "./ItemBody/ItemBody";
 
 import * as actions from '../../store/actions'
 
+import classes from './ItemBlock.css'
+
 class ItemBlock extends Component {
 
     getInitVisibleState( items ) {
@@ -16,10 +18,10 @@ class ItemBlock extends Component {
                     {
                         ...acc,
                         ...item.itemBody.reduce(
-                            (acc, body) => {
+                            ( acc, body ) => {
                                 const temp = {}
                                 temp[ item.idea.title + body.constructor.name ] = false
-                                return {...acc, ...temp}
+                                return { ...acc, ...temp }
                             }, {}
                         )
                     }
@@ -48,17 +50,19 @@ class ItemBlock extends Component {
                             date = { item.idea.date }
                             bodyInfo = { item.getBodyTypesWithAmount() }
                         />
-                        { item.itemBody.map(
-                            body => {
-                                return (
-                                    <ItemBody
-                                        key = { item.idea.title + body.constructor.name + body.amount }
-                                        body = { body }
-                                        visible = { this.props.visible[ '' + item.idea.title + body.constructor.name ] }
-                                    />
-                                )
-                            }
-                        ) }
+                        <div className={classes.itemBodiesWrapper}>
+                            { item.itemBody.map(
+                                body => {
+                                    return (
+                                        <ItemBody
+                                            key = { item.idea.title + body.constructor.name + body.amount }
+                                            body = { body }
+                                            visible = { this.props.visible[ '' + item.idea.title + body.constructor.name ] }
+                                        />
+                                    )
+                                }
+                            ) }
+                        </div>
                     </AuxWrapper>
                 )
             }
