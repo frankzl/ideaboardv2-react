@@ -4,7 +4,7 @@
 }
 
 .textWrapper{
-    flex: 4;
+    flex: auto;
     padding: 25px;
     display: flex;
 }
@@ -12,5 +12,5 @@
 .actionsWrapper{
     /*flex:auto*/
     display: flex;
-    flex: 1
+    flex-wrap: wrap;
 }

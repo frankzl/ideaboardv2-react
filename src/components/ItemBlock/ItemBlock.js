@@ -8,16 +8,23 @@ const ItemBlock = ( props ) => {
         item => {
             return (
                 <AuxWrapper
-                    key={ item.title + item.date.getTime() }>
+                    key={ item.idea.title + item.idea.date.getTime() }>
                     <ItemHeader
                         upvotes={ 5 }
                         optValue={ 6 }
-                        title={ item.title }
-                        author={ item.author }
-                        description={ item.description }
-                        date={ item.date }
+                        title={ item.idea.title }
+                        author={ item.idea.author }
+                        description={ item.idea.description }
+                        date={ item.idea.date }
+                        bodyInfo={item.getBodyTypesWithAmount()}
                     />
-                    <ItemBody/>
+                    {item.itemBody.map(
+                        body => {
+                            return (
+                                <ItemBody key = {body.type+';'+body.amount}/>
+                            )
+                        }
+                    )}
                 </AuxWrapper>
             )
         }

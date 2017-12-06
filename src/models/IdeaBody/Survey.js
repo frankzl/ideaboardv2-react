@@ -6,9 +6,13 @@ export class Option {
 }
 
 class Survey {
-    constructor( options, amount=0 ) {
+    constructor( options ) {
         this.options = options
-        this.amout = amount
+        this.amount = options.reduce(
+            (acc, option) => acc + option.votes,
+            0
+        )
+        console.log(options)
     }
 }
 

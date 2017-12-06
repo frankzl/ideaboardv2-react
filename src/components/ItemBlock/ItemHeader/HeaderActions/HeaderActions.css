@@ -5,7 +5,7 @@
     display: flex;
     border-left: 1px solid lightgray;
     padding: 0 25px 0 25px;
-    flex: auto;
+    width: 50px;
     justify-content: center;
 }
 
@@ -15,4 +15,5 @@
 
 .actionChildContainer{
     margin-right: 10px;
+    width: 25px;
 }

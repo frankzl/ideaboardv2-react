@@ -7,18 +7,21 @@ const HeaderActions = (props) => {
 
     let reqIcon = 'comment'
 
-    switch( props.type ){
-        case 'idea': reqIcon = 'comment'
-            break;
-        case 'survey': reqIcon = 'people'
-            break;
-    }
-
     return <AuxWrapper>
-        <div className={classes.actionContainer}>
-            <span className={classes.actionChildContainer}><i className="material-icons">{reqIcon}</i></span>
-            <span>{props.optValue}</span>
-        </div>
+        {props.bodyInfo.map(
+            (body) => {
+                switch( body.type ){
+                    case 'Survey': reqIcon = 'people'
+                        break;
+                    case 'Comments': reqIcon = 'comments'
+                        break;
+                }
+                return <div key={body.type} className={classes.actionContainer}>
+                    <span className={classes.actionChildContainer}><i className="material-icons">{reqIcon}</i></span>
+                    <span>{body.amount}</span>
+                </div>
+            }
+        )}
         <div className={classes.actionContainer}>
             <span className={classes.actionChildContainer}><i className="material-icons">thumb_up</i></span>
             <span>{props.upvotes}</span>

@@ -9,7 +9,7 @@ export class Comment {
 }
 
 export default class Comments {
-    constructor( text="", comments, amount ){
+    constructor( text="", comments, amount=0 ){
         this.comments = comments
         this.amount = amount
         this.text = text

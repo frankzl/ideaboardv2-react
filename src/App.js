@@ -6,7 +6,7 @@ import Layout from "./components/Layout/Layout";
 import ItemBlock from "./components/ItemBlock/ItemBlock";
 import Idea from "./models/Idea";
 import Item from "./models/Item";
-import Survey from "./models/IdeaBody/Survey";
+import Survey, {Option} from "./models/IdeaBody/Survey";
 import Comments from "./models/IdeaBody/Comments";
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
         const itemList = [
             new Item( new Idea('Title 1', 'Frank', 'halleluja ipsum', new Date()),
                 [
-                    new Survey( [new Option('A', 5), new Option('B', 3), new Option('C', 2)], 3 ),
+                    new Survey( [new Option('A', 2), new Option('B', 3), new Option('C', 2)], 3 ),
                     new Comments([], 0)
                 ]
             ),
@@ -37,7 +37,7 @@ class App extends Component {
                       rel="stylesheet"/>
                 <div className="App">
                     <Layout>
-                        <ItemBlock items={ideaList}/>
+                        <ItemBlock items={itemList}/>
                     </Layout>
                 </div>
             </MuiThemeProvider>

@@ -9,7 +9,7 @@ const ItemHeader = (props) => {
             <HeaderText title={props.title} description={props.description} date={props.date}/>
         </div>
         <div className={classes.actionsWrapper}>
-            <HeaderActions upvotes={props.upvotes} optValue={props.optValue} type={props.type}/>
+            <HeaderActions upvotes={props.upvotes} bodyInfo={props.bodyInfo}/>
         </div>
     </div>
 }
