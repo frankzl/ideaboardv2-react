@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
+
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Layout from "./components/Layout/Layout";
 import ItemBlock from "./components/ItemBlock/ItemBlock";
@@ -40,8 +43,13 @@ class App extends Component {
             new Idea('Whyis 2', 'Buyo', 'halleluja ipsum', new Date()),
             new Idea('Tree r2', 'Lu', 'halleluja ipsum', new Date())]
 
+        const theme = getMuiTheme(lightBaseTheme)
+        theme['palette'] = {
+            primaryColor: 'gray'
+        }
+
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider muiTheme={theme}>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
                       rel="stylesheet"/>
                 <div className="App">

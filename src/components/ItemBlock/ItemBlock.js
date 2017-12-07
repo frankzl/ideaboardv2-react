@@ -41,6 +41,7 @@ class ItemBlock extends Component {
                 return (
                     <div
                         onMouseOver={() => this.props.onFocusItem( item.idea.title + item.idea.date.toDateString() )}
+                        onTouchStart={() => this.props.onFocusItem( item.idea.title + item.idea.date.toDateString() )}
                         className={this.props.focus === item.idea.title + item.idea.date.toDateString() ? classes.itemWrapper : classes.itemWrapperDefault}
                         key={item.idea.title + item.idea.date.getTime()}>
                         <ItemHeader

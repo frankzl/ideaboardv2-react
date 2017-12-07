@@ -6,8 +6,9 @@ export class Option {
 }
 
 class Survey {
-    constructor( options ) {
+    constructor( options, question='' ) {
         this.options = options
+        this.question = question
         this.amount = options.reduce(
             (acc, option) => acc + option.votes,
             0

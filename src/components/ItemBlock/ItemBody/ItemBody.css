@@ -3,3 +3,12 @@
     display: flex;
     padding: 25px;
 }
+
+.headline{
+    font-weight: bold;
+    font-size:13px;
+}
+
+.headlineIcon{
+    font-size: 25px;
+}

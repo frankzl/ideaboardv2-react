@@ -9,21 +9,21 @@ import local from './Survey.css'
 
 
 const Survey = ( props ) => {
-    return <div className={classes.itemWrapper} style={{ display: 'flex' }}>
-        <div style={{ display: 'flex', flex: 'auto', justifyContent: 'center', alignItems: 'center' }}>
-            {props.body.options.map(
+    return <div className = { classes.itemWrapper } style = { { backgroundColor : '#E1F5FE', display : 'flex' } }>
+        <div style = { { display : 'flex', flex : 'auto', justifyContent : 'center', alignItems : 'center' } }>
+            { props.body.options.map(
                 option => {
-                    return <div style={{ flex: 'auto' }}
-                                key={option.name}>
-                        <Checkbox label={option.name}/>
+                    return <div style = { { flex : 'auto' } }
+                                key = { option.name }>
+                        <Checkbox label = { option.name } />
                     </div>
                 }
-            )}
-            <FloatingActionButton mini={true}>
-                <Check/>
+            ) }
+            <FloatingActionButton mini = { true } backgroundColor = '#03A9F4'>
+                <Check />
             </FloatingActionButton>
         </div>
-        <div style={{ flex: 'auto', display: 'flex', justifyContent: 'center' }}>
+        <div style = { { flex : 'auto', display : 'flex', justifyContent : 'center' } }>
             <p>Survey</p>
         </div>
     </div>
