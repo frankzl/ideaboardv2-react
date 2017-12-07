@@ -1,11 +1,10 @@
 import * as actionTypes from '../actions'
 
-const initialState = {
-}
+const initialState = {}
 
 
 const reducer = ( state = initialState, action ) => {
-    switch (action.type) {
+    switch ( action.type ) {
 
         case actionTypes.VIS_INIT:
             return {
@@ -14,34 +13,48 @@ const reducer = ( state = initialState, action ) => {
             }
         case actionTypes.VIS_ALL:
             let toggleValue = true
-            if( state[action.title + 'Comments'] == true ||
-                state[action.title + 'Survey'] == true ){
+            if ( state[ action.title + 'Comments' ] == true ||
+                state[ action.title + 'Survey' ] == true ) {
                 toggleValue = false
             }
             let temp = {}
-            temp[action.title + 'Comments'] = toggleValue
-            temp[action.title + 'Survey'] = toggleValue
+            temp[ action.title + 'Comments' ] = toggleValue
+            temp[ action.title + 'Survey' ] = toggleValue
             return {
                 ...state,
                 ...temp
             }
         case actionTypes.VIS_COMMENTS:
             temp = {}
-            temp[action.title + 'Comments'] = !state[action.title + 'Comments']
-            temp[action.title + 'Survey'] = false
+            if ( state[ action.title + 'Survey' ] && state[ action.title + 'Comments' ] )
+                temp[ action.title + 'Survey' ] = false
+            else {
+                temp[ action.title + 'Comments' ] = !state[ action.title + 'Comments' ]
+                temp[ action.title + 'Survey' ] = false
+            }
             return {
                 ...state,
                 ...temp
             }
         case actionTypes.VIS_SURVEY:
             temp = {}
-            temp[action.title + 'Survey'] = !state[action.title + 'Survey']
-            temp[action.title + 'Comments'] = false
+            if ( state[ action.title + 'Survey' ] && state[ action.title + 'Comments' ] )
+                temp[ action.title + 'Comments' ] = false
+            else {
+                temp[ action.title + 'Survey' ] = !state[ action.title + 'Survey' ]
+                temp[ action.title + 'Comments' ] = false
+            }
             return {
                 ...state,
                 ...temp
             }
-        default: return state
+        case actionTypes.FOCUS:
+            return {
+                ...state,
+                focus: action.id
+            }
+        default:
+            return state
     }
 }
 

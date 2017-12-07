@@ -1,3 +1,11 @@
 .itemBodiesWrapper{
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    /*box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 6px;*/
+}
+
+.itemWrapper{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 20px, rgba(0, 0, 0, 0.12) 0px 1px 20px;
+}
+
+.itemWrapperDefault{
+    border-bottom: 1px solid lightgray;
 }

@@ -2,10 +2,11 @@ import React from 'react'
 import classes from '../ItemBody.css'
 import localClasses from './Comments.css'
 import { Comment } from "../../../../models/IdeaBody/CommentsModel";
+import CommentView from "./Comment/Comment";
 
 const Comments = ( props ) => {
 
-    comments = [
+    const comments = [
         new Comment('Frank', 'fdsakjlf dfa d fasdfjdasl', new Date(), 5),
         new Comment('Frank', 'fdsakjlf dfa d fasdfjdasl', new Date(), 5),
         new Comment('Frank', 'fdsakjlf dfa d fasdfjdasl', new Date(), 5)
@@ -17,7 +18,7 @@ const Comments = ( props ) => {
             <hr className={localClasses.hr}/>
             {comments.map(
                 comment => {
-                    return null
+                    return <CommentView key={Math.random()} author={comment.author} text={comment.text} date={comment.date}/>
                 }
             )}
         </div>

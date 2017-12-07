@@ -23,6 +23,16 @@ class App extends Component {
                 [
                     new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
                 ]
+            ),
+            new Item( new Idea('Title 3', 'Joe', 'confusion confucius ipsum', new Date()),
+                [
+                    new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
+                ]
+            ),
+            new Item( new Idea('Title 4', 'Joe', 'confusion confucius ipsum', new Date()),
+                [
+                    new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
+                ]
             )
         ]
         const ideaList = [

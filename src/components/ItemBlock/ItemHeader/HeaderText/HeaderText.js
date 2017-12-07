@@ -1,13 +1,7 @@
 import classes from './HeaderText.css'
 import React from 'react'
 import AuxWrapper from "../../../../hoc/AuxWrap";
-
-const dateToString = ( date ) => {
-    const splitDate = date.toDateString().split( ' ' )
-    const day = splitDate[ 1 ] + ' ' + splitDate[ 2 ]
-    const time = date.toTimeString().split( ':' )
-    return day + ' - ' + time[ 0 ] + ':' + time[ 1 ]
-}
+import {dateToString} from "../../../../models/AuxFunctions";
 
 const HeaderText = ( props ) => {
     return <AuxWrapper>

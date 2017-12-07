@@ -39,31 +39,34 @@ class ItemBlock extends Component {
         return this.props.items.map(
             item => {
                 return (
-                    <AuxWrapper
-                        key = { item.idea.title + item.idea.date.getTime() }>
+                    <div
+                        onMouseOver={() => this.props.onFocusItem( item.idea.title + item.idea.date.toDateString() )}
+                        className={this.props.focus === item.idea.title + item.idea.date.toDateString() ? classes.itemWrapper : classes.itemWrapperDefault}
+                        key={item.idea.title + item.idea.date.getTime()}>
                         <ItemHeader
-                            upvotes = { 5 }
-                            optValue = { 6 }
-                            title = { item.idea.title }
-                            author = { item.idea.author }
-                            description = { item.idea.description }
-                            date = { item.idea.date }
-                            bodyInfo = { item.getBodyTypesWithAmount() }
+                            upvotes={5}
+                            optValue={6}
+                            title={item.idea.title}
+                            author={item.idea.author}
+                            description={item.idea.description}
+                            date={item.idea.date}
+                            bodyInfo={item.getBodyTypesWithAmount()}
                         />
+
                         <div className={classes.itemBodiesWrapper}>
-                            { item.itemBody.map(
+                            {item.itemBody.map(
                                 body => {
                                     return (
                                         <ItemBody
-                                            key = { item.idea.title + body.constructor.name + body.amount }
-                                            body = { body }
-                                            visible = { this.props.visible[ '' + item.idea.title + body.constructor.name ] }
+                                            key={item.idea.title + body.constructor.name + body.amount}
+                                            body={body}
+                                            visible={this.props.visible[ '' + item.idea.title + body.constructor.name ]}
                                         />
                                     )
                                 }
-                            ) }
+                            )}
                         </div>
-                    </AuxWrapper>
+                    </div>
                 )
             }
         )
@@ -72,13 +75,15 @@ class ItemBlock extends Component {
 
 const mapStateToProps = ( state ) => {
     return {
-        visible : state.visibility
+        visible: state.visibility,
+        focus: state.visibility.focus
     }
 }
 
 const mapDispatchToProps = ( dispatch ) => {
     return {
-        onInitItems : ( items ) => dispatch( { type : actions.VIS_INIT, items : items } )
+        onInitItems: ( items ) => dispatch( { type: actions.VIS_INIT, items: items } ),
+        onFocusItem: ( id ) => dispatch( { type: actions.FOCUS, id: id } )
     }
 }
 
