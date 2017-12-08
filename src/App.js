@@ -36,7 +36,25 @@ class App extends Component {
                 [
                     new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
                 ]
-            )
+            ),
+            new Item( new Idea('What about this', 'Frank', 'halleluja ipsum', new Date()),
+                [
+                    new Survey( [new Option('A', 2), new Option('B', 3), new Option('C', 2)], 3 ),
+                    new Comments([], 0)
+                ]
+            ),
+            new Item( new Idea('Good idea!', 'Frank', 'halleluja ipsum', new Date()),
+                [
+                    new Survey( [new Option('A', 2), new Option('B', 3), new Option('C', 2)], 3 ),
+                    new Comments([], 0)
+                ]
+            ),
+            new Item( new Idea('new number one', 'Frank', 'halleluja ipsum', new Date()),
+                [
+                    new Survey( [new Option('A', 2), new Option('B', 3), new Option('C', 2)], 3 ),
+                    new Comments([], 0)
+                ]
+            ),
         ]
         const ideaList = [
             new Idea('Title 1', 'Frank', 'halleluja ipsum', new Date()),
@@ -54,6 +72,7 @@ class App extends Component {
                       rel="stylesheet"/>
                 <div className="App">
                     <Layout>
+                        <ItemBlock items={itemList}/>
                         <ItemBlock items={itemList}/>
                     </Layout>
                 </div>
