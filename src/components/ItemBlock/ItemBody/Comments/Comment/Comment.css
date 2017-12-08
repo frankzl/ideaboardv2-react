@@ -1,0 +1,12 @@
+
+.date{
+    font-weight: bold;
+    font-size: x-small;
+}
+
+.hr{
+    width: 100%;
+    height: 1px;
+    background: gray;
+    border: 0px;
+}

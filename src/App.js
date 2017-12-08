@@ -14,7 +14,6 @@ import Comments from "./models/IdeaBody/CommentsModel";
 
 class App extends Component {
     render() {
-
         const itemList = [
             new Item( new Idea('Title 1', 'Frank', 'halleluja ipsum', new Date()),
                 [

@@ -4,8 +4,8 @@ import localClasses from './Comments.css'
 import { Comment } from "../../../../models/IdeaBody/CommentsModel";
 import CommentView from "./Comment/Comment";
 
-import ContentAddCircle from 'material-ui/svg-icons/content/add';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add-circle-outline';
+import CommunicationComment from 'material-ui/svg-icons/communication/comment'
 
 
 const Comments = ( props ) => {
@@ -18,6 +18,12 @@ const Comments = ( props ) => {
 
     return (
         <div className = { classes.itemWrapper + ' ' + localClasses.commentsWrapper }>
+            <div>
+                <CommunicationComment color={'gray'}/>
+                <ContentAdd color={'gray'}/>
+                <hr className={localClasses.hr}/>
+            </div>
+
             <div style = { { flex : 'auto' } }>
                 { comments.map(
                     comment => {
@@ -25,11 +31,6 @@ const Comments = ( props ) => {
                                             date = { comment.date } />
                     }
                 ) }
-            </div>
-            <div>
-                <FloatingActionButton mini={true} backgroundColor='#03A9F4'>
-                    <ContentAddCircle></ContentAddCircle>
-                </FloatingActionButton>
             </div>
         </div>
     )
