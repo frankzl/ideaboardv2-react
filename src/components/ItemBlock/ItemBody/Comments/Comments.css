@@ -4,15 +4,17 @@
     height: 1px;
     background: gray;
     border: 0px;
+    margin-top: 0;
+    margin-bottom: 2px;
 }
 .fullwidth{
     width: 100%
 }
 
 .commentsWrapper{
-    background: #c9edfd;
+    background: #fffeee;
     color: #5a5a5a;
     display: flex;
     flex-direction: column;
-
+    padding-top: 10px;
 }

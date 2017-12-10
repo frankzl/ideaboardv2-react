@@ -6,6 +6,7 @@ import CommentView from "./Comment/Comment";
 
 import ContentAdd from 'material-ui/svg-icons/content/add-circle-outline';
 import CommunicationComment from 'material-ui/svg-icons/communication/comment'
+import FlatButton from 'material-ui/FlatButton'
 
 
 const Comments = ( props ) => {
@@ -17,20 +18,21 @@ const Comments = ( props ) => {
     ]
 
     return (
-        <div className = { classes.itemWrapper + ' ' + localClasses.commentsWrapper }>
+        <div className={classes.itemWrapper + ' ' + localClasses.commentsWrapper}>
             <div>
-                <CommunicationComment color={'gray'}/>
-                <ContentAdd color={'gray'}/>
-                <hr className={localClasses.hr}/>
+                <div style={{float: 'right'}}>
+                    <CommunicationComment color={'gray'}/>
+                    <ContentAdd color={'gray'}/>
+                </div>
             </div>
 
-            <div style = { { flex : 'auto' } }>
-                { comments.map(
+            <div style={{ flex: 'auto' }}>
+                {comments.map(
                     comment => {
-                        return <CommentView key = { Math.random() } author = { comment.author } text = { comment.text }
-                                            date = { comment.date } />
+                        return <CommentView key={Math.random()} author={comment.author} text={comment.text}
+                                            date={comment.date}/>
                     }
-                ) }
+                )}
             </div>
         </div>
     )

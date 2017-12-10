@@ -22,7 +22,6 @@ const CommentView = ( props ) => {
                     {dateToString( props.date )}
                 </span>
             </span>
-            <hr className={classes.hr}/>
         </div>
     )
 }
