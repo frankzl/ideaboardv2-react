@@ -15,23 +15,23 @@ import Comments from "./models/IdeaBody/CommentsModel";
 class App extends Component {
     render() {
         const itemList = [
-            new Item( new Idea('Title 1', 'Frank', 'halleluja ipsum', new Date()),
+            new Item( new Idea('Title 12', 'Frank', 'halleluja ipsum', new Date()),
                 [
                     new Survey( [new Option('A', 2), new Option('B', 3), new Option('C', 2)], 3 ),
                     new Comments([], 0)
                 ]
             ),
-            new Item( new Idea('Title 2', 'Joe', 'confusion confucius ipsum', new Date()),
+            new Item( new Idea('Title 21', 'Joe', 'confusion confucius ipsum', new Date()),
                 [
                     new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
                 ]
             ),
-            new Item( new Idea('Title 3', 'Joe', 'confusion confucius ipsum', new Date()),
+            new Item( new Idea('Title 32', 'Joe', 'confusion confucius ipsum', new Date()),
                 [
                     new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
                 ]
             ),
-            new Item( new Idea('Title 4', 'Joe', 'confusion confucius ipsum', new Date()),
+            new Item( new Idea('Title 45', 'Joe', 'confusion confucius ipsum', new Date()),
                 [
                     new Survey( [new Option('C', 5), new Option('B', 3), new Option('A', 2)], 5 ),
                 ]
@@ -71,7 +71,6 @@ class App extends Component {
                       rel="stylesheet"/>
                 <div className="App">
                     <Layout>
-                        <ItemBlock items={itemList}/>
                         <ItemBlock items={itemList}/>
                     </Layout>
                 </div>
